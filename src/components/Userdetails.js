@@ -29,7 +29,7 @@ const UserProfile = () => {
   const [newPayment, setNewPayment] = useState("");
   const [effectiveDate, setEffectiveDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [balance, setBalance] = useState("");
+  const [balance, setBalance] = useState("0");
   const [type, setType] = useState("");
   const [imagePath, setImagePath] = useState("");
   const [error, setError] = useState(null);
@@ -135,7 +135,7 @@ const UserProfile = () => {
       setNewPayment("");
       setEffectiveDate("");
       setEndDate("");
-      setBalance("");
+      setBalance("0");
       setType("");
       toast.success("ativated successfully!");
     } catch (error) {

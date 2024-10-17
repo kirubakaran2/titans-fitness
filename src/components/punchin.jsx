@@ -147,7 +147,7 @@ const Punchin = () => {
         <img
           src={logo}
           alt="Logo"
-          className="w-1/2 h-1/2 object-contain"
+          className="w-[100vw] h-[100vh] object-contain"
           style={{ opacity: 0.3 }}
         />
       </div>
@@ -200,7 +200,7 @@ const Punchin = () => {
             </span>
           </div>
           <div className="flex justify-center flex-1">
-            <img src={logo} alt="Logo" className="w-97 h-24" />
+            <img src={logo} alt="Logo" className="w-full h-full" />
           </div>
           <div className="flex-1"></div>
         </header>
@@ -406,27 +406,21 @@ const Punchin = () => {
                 END DATE: {paymentDetails.payment[0].END_DATE.slice(0, 10)}
               </p> */}
               <p className="text-red-900 font-bold text-lg">
-              {paymentDetails.USER && paymentDetails.USER?.PAYMENT_HISTORY[0]?.END_DATE.slice(0, 10).split("-").reverse().join("-")} : NEXT DUE DATE
+              {paymentDetails.USER && paymentDetails.USER?.PAYMENT_HISTORY[paymentDetails.USER?.PAYMENT_HISTORY?.length-1]?.END_DATE.slice(0, 10).split("-").reverse().join("-")} : NEXT DUE DATE
               </p>
             </div>
           </div>
 
                   <div
                     className={`px-10 py-2 rounded ${
-                      paymentDetails.USER && paymentDetails.USER?.PAYMENT_HISTORY[0].PAYMENT_BALANCE === 0 &&
-                      new Date(paymentDetails.USER?.PAYMENT_HISTORY[0].END_DATE) > new Date()
+                      paymentDetails.USER && paymentDetails.USER?.PAYMENT_HISTORY[paymentDetails.USER?.PAYMENT_HISTORY?.length-1].PAYMENT_BALANCE == 0 &&
+                      new Date(paymentDetails.USER?.PAYMENT_HISTORY[paymentDetails.USER?.PAYMENT_HISTORY?.length-1].END_DATE) > new Date()
                         ? "bg-green-500"
                         : "bg-red-500"
                     }`}
                   >
                     <p className="font-sans text-sm text-white">
-                      {paymentDetails.USER && paymentDetails.USER?.PAYMENT_HISTORY.every(
-                        (payment) =>
-                          payment.PAYMENT_BALANCE === 0 &&
-                          new Date(payment.END_DATE) > new Date()
-                      )
-                        ? "Paid"
-                        : "Unpaid"}
+                      {paymentDetails?.USER?.PAYMENT_STATUS}
                     </p>
                   </div>
                 </div>
