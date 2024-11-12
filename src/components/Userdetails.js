@@ -890,7 +890,7 @@ const UserProfile = () => {
                   </thead>
                   <tbody>
                     {attendenceHistory?.length > 0 ? (
-                      attendenceHistory?.map((att, index) => (
+                      attendenceHistory?.sort((a, b) => new Date(b.IN_TIME) - new Date(a.IN_TIME))?.map((att, index) => (
                         <tr key={index} className="border-b last:border-none hover:bg-gray-100">
                           <td className="px-4 py-2">{att?.IN_TIME && new Date(att?.IN_TIME)?.toLocaleString()}</td>
                           <td className="px-4 py-2">{att?.OUT_TIME ? new Date(att?.OUT_TIME)?.toLocaleString() : ""}</td>
