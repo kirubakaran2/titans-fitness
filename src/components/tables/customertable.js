@@ -90,7 +90,7 @@ const Customertable = () => {
       setIsLoading(true);
       const token = sessionStorage.getItem("token");
       const headers = { Authorization: `Bearer ${token}` };
-      const baseUrl = `https://titan-api-v2uu.onrender.com/admin/payment`;
+      const baseUrl = `http://54.175.94.211:8080/admin/payment`;
       const url = page === 0 ? baseUrl : `${baseUrl}?page=${page + 0}`;
       const response = await Axios.get(url, { headers });
       const transformedData = response.data.customer.map((customer) => ({
@@ -156,7 +156,7 @@ const Customertable = () => {
   const handleOpenClick = async (customerId) => {
     try {
       await Axios.get(
-        `https://titan-api-v2uu.onrender.com/admin/user/${customerId}`,
+        `http://54.175.94.211:8080/admin/user/${customerId}`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,

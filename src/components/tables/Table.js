@@ -56,7 +56,7 @@ const Tablegym = () => {
     const fetchData = async () => {
       try {
         const response = await Axios.get(
-          "https://titan-api-v2uu.onrender.com/admin/dashboard",
+          "http://54.175.94.211:8080/admin/dashboard",
           {
             headers: {
               Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -92,7 +92,7 @@ const Tablegym = () => {
   const handleOpenClick = async (customerId) => {
     try {
       const response = await Axios.get(
-        `https://titan-api-v2uu.onrender.com/admin/user/${customerId}`,
+        `http://54.175.94.211:8080/admin/user/${customerId}`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,

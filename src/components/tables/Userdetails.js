@@ -56,7 +56,7 @@ const UserProfile = () => {
       try {
         const token = sessionStorage.getItem("token");
         const response = await Axios.get(
-          `https://titan-api-v2uu.onrender.com/admin/user/${id}`,
+          `http://54.175.94.211:8080/admin/user/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -85,7 +85,7 @@ const UserProfile = () => {
   const activateUser = async () => {
     try {
       const response = await Axios.post(
-        "https://titan-api-v2uu.onrender.com/admin/user/active",
+        "http://54.175.94.211:8080/admin/user/active",
         { userID: id },
         {
           headers: {
@@ -121,7 +121,7 @@ const UserProfile = () => {
   const deactivateUser = async () => {
     try {
       const response = await Axios.post(
-        "https://titan-api-v2uu.onrender.com/admin/user/non-active",
+        "http://54.175.94.211:8080/admin/user/non-active",
         { userID: id },
         {
           headers: {
@@ -221,7 +221,7 @@ const UserProfile = () => {
     try {
       const token = sessionStorage.getItem("token");
       const response = await Axios.patch(
-        `https://titan-api-v2uu.onrender.com/admin/user/${id}`,
+        `http://54.175.94.211:8080/admin/user/${id}`,
         formData,
         {
           headers: {
@@ -261,7 +261,7 @@ const UserProfile = () => {
     try {
       const token = sessionStorage.getItem("token");
       const response = await Axios.post(
-        "https://titan-api-v2uu.onrender.com/admin/payment/add",
+        "http://54.175.94.211:8080/admin/payment/add",
         {
           id: user.ID,
           type,

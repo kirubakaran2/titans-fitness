@@ -49,7 +49,7 @@ const SendMessage = () => {
     const headers = { Authorization: `Bearer ${token}` };
    if(imageUrl) {
     await axios
-    .post("https://titan-api-v2uu.onrender.com/send-images", {
+    .post("http://54.175.94.211:8080/send-images", {
       ...message,
       image: imageUrl
     }, {headers})
@@ -57,7 +57,7 @@ const SendMessage = () => {
    }
    else {
     await axios
-    .post("https://titan-api-v2uu.onrender.com/send-sms", {
+    .post("http://54.175.94.211:8080/send-sms", {
       ...message,
     }, {headers})
     .then((res) => toast.success("Message Sent"));

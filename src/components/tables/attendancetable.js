@@ -85,7 +85,7 @@ const Attendancetable = () => {
       setIsLoading(true);
       const token = sessionStorage.getItem("token");
       const headers = { Authorization: `Bearer ${token}` };
-      const baseUrl = `https://titan-api-v2uu.onrender.com/admin/attendance/${period}?date=${new Date(filterDate).toISOString().slice(0,10)}`
+      const baseUrl = `http://54.175.94.211:8080/admin/attendance/${period}?date=${new Date(filterDate).toISOString().slice(0,10)}`
       const url = page === 0 ? baseUrl : `${baseUrl}&page=${page + 1}`;
       const response = await Axios.get(url, { headers });
       setTableData(response.data.user);
@@ -106,7 +106,7 @@ const Attendancetable = () => {
       const headers = { Authorization: `Bearer ${token}` };
       
       // Determine the base URL based on the selected period
-      const baseUrl = `https://titan-api-v2uu.onrender.com/admin/attendance${period ? `/${period}` : ''}`;
+      const baseUrl = `http://54.175.94.211:8080/admin/attendance${period ? `/${period}` : ''}`;
       const url = page === 0 ? baseUrl : `${baseUrl}?page=${page + 1}`;
   
       const response = await Axios.get(url, { headers });
@@ -163,7 +163,7 @@ const applyFilter = () => {
   const handleOpenClick = async (customerId) => {
     try {
       await Axios.get(
-        `https://titan-api-v2uu.onrender.com/admin/user/${customerId}`,
+        `http://54.175.94.211:8080/admin/user/${customerId}`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
