@@ -19,7 +19,7 @@ function Login() {
   const handlePhoneSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://54.175.94.211:8080/customerlogin', { phone });
+      const response = await axios.post('https://titan-api-v2uu.onrender.com/customerlogin', { phone });
       if (response.data.token) {
         toast.success('OTP sent to your phone');
         setStep(2); // Move to OTP input
@@ -35,7 +35,7 @@ function Login() {
   const handleOtpSubmit = async () => {
     setLoading(true);
     try {
-      const response = await axios.post('http://54.175.94.211:8080/verifyotp', { phone, otp });
+      const response = await axios.post('https://titan-api-v2uu.onrender.com/verifyotp', { phone, otp });
       if (response.data.token) {
         toast.success('Login successful');
         sessionStorage.setItem('token', response.data.token);

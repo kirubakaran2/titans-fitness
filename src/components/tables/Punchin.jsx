@@ -17,7 +17,7 @@ const Punchinform = () => {
       searchId: searchId,
     });
   
-    const url = `http://54.175.94.211:8080/admin/user/searching?${searchParams.toString()}`;
+    const url = `https://titan-api-v2uu.onrender.com/admin/user/searching?${searchParams.toString()}`;
   
     try {
       const token = sessionStorage.getItem('token');

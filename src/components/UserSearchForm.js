@@ -23,7 +23,7 @@ const UserSearchForm = ({ onSubmit }) => {
       name: name.toLowerCase(),
     });
 
-    const url = `http://54.175.94.211:8080/admin/user/searching?${searchParams.toString()}`;
+    const url = `https://titan-api-v2uu.onrender.com/admin/user/searching?${searchParams.toString()}`;
 
     try {
       const token = sessionStorage.getItem('token');
@@ -48,7 +48,7 @@ const UserSearchForm = ({ onSubmit }) => {
   };
   const handleOpenClick = async (_id) => {
     try {
-      const response = await axios.get(`http://54.175.94.211:8080/admin/user/${_id}`, {
+      const response = await axios.get(`https://titan-api-v2uu.onrender.com/admin/user/${_id}`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },

@@ -25,7 +25,7 @@ const CustSearch = () => {
 
       const headers = { Authorization: `Bearer ${token}` };
       const paymentCountResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/paymentcount`,
+        `https://titan-api-v2uu.onrender.com/admin/paymentcount`,
         { headers }
       );
 
@@ -50,7 +50,7 @@ const CustSearch = () => {
       const token = sessionStorage.getItem("token");
       const headers = { Authorization: `Bearer ${token}` };
       const paymentDetailsResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/payment/${userId}`,
+        `https://titan-api-v2uu.onrender.com/admin/payment/${userId}`,
         { headers }
       );
       setPaymentDetails(paymentDetailsResponse.data);
@@ -64,7 +64,7 @@ const CustSearch = () => {
     try {
       const token = sessionStorage.getItem("token");
       await axios.get(
-        `http://54.175.94.211:8080/admin/user/${customerId}`,
+        `https://titan-api-v2uu.onrender.com/admin/user/${customerId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       navigate(`/user/${customerId}`);
@@ -148,7 +148,7 @@ const CustSearch = () => {
           <div className="payment-details w-full flex flex-row items-start justify-around">
             <div className="flex gap-2 items-start justify-between">
               <div className="">
-                <img src={`http://54.175.94.211:8080/${paymentData.USER.IMAGE_PATH}`} alt="" srcset="" />
+                <img src={`https://titan-api-v2uu.onrender.com/${paymentData.USER.IMAGE_PATH}`} alt="" srcset="" />
               </div>
               <div className="customer-info w-[300px] border-r flex flex-col items-start gap-2 p-2">
               <p className="text-2xl">{paymentData.USER.NAME.toUpperCase()}</p>

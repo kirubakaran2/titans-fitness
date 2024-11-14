@@ -24,7 +24,7 @@ function Login() {
   const handleLogin = async () => {
     setLoading(true); 
     try {
-      const response = await axios.post('http://54.175.94.211:8080/login', { email, password });
+      const response = await axios.post('https://titan-api-v2uu.onrender.com/login', { email, password });
       const authToken = response.data.token;
       setToken(authToken);
       sessionStorage.setItem('token', authToken);

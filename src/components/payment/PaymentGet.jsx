@@ -25,7 +25,7 @@ const PaymentHistory = ({ userId }) => {
         Authorization: `Bearer ${token}`,
       };
       const paymentDetailsResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/payment/${userId}`,
+        `https://titan-api-v2uu.onrender.com/admin/payment/${userId}`,
         { headers }
       );
       setPaymentDetails(paymentDetailsResponse.data);
@@ -56,7 +56,7 @@ const PaymentHistory = ({ userId }) => {
     try {
       const token = sessionStorage.getItem("token");
       const response = await axios.delete(
-        `http://54.175.94.211:8080/admin/payment/${paymentId}`,
+        `https://titan-api-v2uu.onrender.com/admin/payment/${paymentId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -111,7 +111,7 @@ const PaymentHistory = ({ userId }) => {
       const requestData = { paymentId, amount, end: formattedEnd, balance };
 
       const response = await axios.patch(
-        `http://54.175.94.211:8080/admin/payment/${userId}`,
+        `https://titan-api-v2uu.onrender.com/admin/payment/${userId}`,
         {
           paymentId, 
           amount, 
@@ -185,7 +185,7 @@ const PaymentHistory = ({ userId }) => {
       const formattedEnd = new Date(end).toISOString().split("T")[0];
 
       const response = await axios.post(
-        `http://54.175.94.211:8080/admin/payment`,
+        `https://titan-api-v2uu.onrender.com/admin/payment`,
         { userId, amount, effective: formattedEffective, end: formattedEnd, balance, type },
         {
           headers: {

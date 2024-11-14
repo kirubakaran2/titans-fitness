@@ -42,7 +42,7 @@ const Punchin = () => {
       const headers = { Authorization: `Bearer ${token}` };
 
       const userDetailsResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/user/searching?name={{userName}}&dob={{dob}}&mobile={{mobile}}&userID=${searchId}`,
+        `https://titan-api-v2uu.onrender.com/admin/user/searching?name={{userName}}&dob={{dob}}&mobile={{mobile}}&userID=${searchId}`,
         { headers }
       );
 
@@ -51,18 +51,18 @@ const Punchin = () => {
       setUserDetails(userData);
 
       if (userData.user && userData.user.IMAGE_PATH) {
-        const imagePath = `http://54.175.94.211:8080/${userData.user.IMAGE_PATH}`;
+        const imagePath = `https://titan-api-v2uu.onrender.com/${userData.user.IMAGE_PATH}`;
         setImagePath(imagePath);
       } else {
         setImagePath(defaultImg);
       }
 
       const punchInTimesResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/punch/in?userId=${searchId}`,
+        `https://titan-api-v2uu.onrender.com/admin/punch/in?userId=${searchId}`,
         { headers }
       );
       const punchOutTimesResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/punch/out?userId=${searchId}`,
+        `https://titan-api-v2uu.onrender.com/admin/punch/out?userId=${searchId}`,
         { headers }
       );
       const punchTimesData = {
@@ -72,7 +72,7 @@ const Punchin = () => {
       setPunchTimes(punchTimesData);
 
       const paymentDetailsResponse = await axios.get(
-        `http://54.175.94.211:8080/admin/payment/${searchId}`,
+        `https://titan-api-v2uu.onrender.com/admin/payment/${searchId}`,
         { headers }
       );
       setPaymentDetails(paymentDetailsResponse.data);
@@ -90,7 +90,7 @@ const Punchin = () => {
         "Content-Type": "application/json",
       };
       await axios.post(
-        `http://54.175.94.211:8080/admin/time/in`,
+        `https://titan-api-v2uu.onrender.com/admin/time/in`,
         { id: searchId },
         { headers }
       );
@@ -111,7 +111,7 @@ const Punchin = () => {
         "Content-Type": "application/json",
       };
       await axios.post(
-        `http://54.175.94.211:8080/admin/time/out`,
+        `https://titan-api-v2uu.onrender.com/admin/time/out`,
         { id: searchId },
         { headers }
       );

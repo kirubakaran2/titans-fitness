@@ -25,7 +25,7 @@ const UserDashboard = () => {
   const fetchUserData = async () => {
     try {
       const response = await fetch(
-        `http://54.175.94.211:8080/admin/user/${userInfo.ID}`
+        `https://titan-api-v2uu.onrender.com/admin/user/${userInfo.ID}`
       );
       const data = await response.json();
       setImagePath(data.IMAGE_PATH || defaultImg);
@@ -39,7 +39,7 @@ const UserDashboard = () => {
     const fetchUserDashboardData = async () => {
       try {
         const response = await axios.get(
-          `http://54.175.94.211:8080/customer/dashboard`,
+          `https://titan-api-v2uu.onrender.com/customer/dashboard`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -58,7 +58,7 @@ const UserDashboard = () => {
     const fetchPunchData = async () => {
       try {
         const response = await axios.get(
-          `http://54.175.94.211:8080/customer/punch`,
+          `https://titan-api-v2uu.onrender.com/customer/punch`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
