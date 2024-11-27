@@ -144,38 +144,37 @@ const HomePage = () => {
       </div>
       {/* Card 1 */}
       <div className="w-full max-w-sm lg:max-w-full lg:flex justify-center mt-10">
-        <div className="h-96 lg:h-96 lg:w-96 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
-          <img
-            src={Boy}
-            alt="Image of a person"
-            className="h-full w-full object-cover"
-          />
-        </div>
+  <div className="h-96 lg:h-96 lg:w-96 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+    <img
+      src={Boy}
+      alt="Image of a person"
+      className="h-full w-full object-cover"
+    />
+  </div>
 
-        <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal mx-4 lg:mx-20">
-          <div className="mb-8">
-            <div className="text-gray-900 text-4xl mb-2 font-norwester">
-              TITAN <span className="text-70AB0E-800"> FITNESS GYM </span>
-            </div>
-            <p className="text-gray-700 text-xl font-bold">About Us</p>
-            <p className="text-gray-700 text-xl mt-4 text-justify">
-              Titan Fitness Studio, Pondicherry's premier fitness center, opened
-              on November 4, 2022, in a 1700 square feet, fully air-conditioned
-              facility. We provide a welcoming ambiance, secure restrooms,
-              dressing rooms with lockers, shoe racks, and Auro purifier water
-              facilities. Our training sessions include strength, cardio,
-              mobility, flexibility, weight management, muscle building, and
-              bodybuilding transformations. We have certified, professional, and
-              friendly trainers, offering both male and female coaches for
-              client comfort. Catering to clients aged 13 and above, we have
-              successfully served over 100 clients. Personal training is
-              available, and we prioritize cleanliness and hygiene for our
-              clients' well-being.
-            </p>
-            <p className="text-gray-700 text-xl mt-5 text-justify"></p>
-          </div>
-        </div>
+  <div className="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+    <div>
+      <div className="text-gray-900 text-4xl mb-2 font-norwester">
+        TITAN <span className="text-70AB0E-800"> FITNESS GYM </span>
       </div>
+      <p className="text-gray-700 text-xl font-bold">About Us</p>
+      <p className="text-gray-700 text-xl mt-2 text-justify">
+        Titan Fitness Studio, Pondicherry's premier fitness center, opened
+        on November 4, 2022, in a 1700 square feet, fully air-conditioned
+        facility. We provide a welcoming ambiance, secure restrooms,
+        dressing rooms with lockers, shoe racks, and Auro purifier water
+        facilities. Our training sessions include strength, cardio,
+        mobility, flexibility, weight management, muscle building, and
+        bodybuilding transformations. We have certified, professional, and
+        friendly trainers, offering both male and female coaches for
+        client comfort. Catering to clients aged 13 and above, we have
+        successfully served over 100 clients. Personal training is
+        available, and we prioritize cleanliness and hygiene for our
+        clients' well-being.
+      </p>
+    </div>
+  </div>
+</div>
       {/* Card 2 */}
       <div className="mt-10 p-6 lg:p-20 w-full max-w-sm lg:max-w-full lg:flex justify-center bg-darkblue-100">
         <div className="h-96 lg:h-96 lg:w-96 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden lg:order-2">
@@ -207,20 +206,16 @@ const HomePage = () => {
         </div>
       </div>
       {/* Card 3 */}
-      <div className="text-center content-center justify-center">
-        <p
-          className="text-4xl"
-          style={{ fontFamily: "Norwester", letterSpacing: "1px" }}
-        >
-          WHY YOU <span className="text-70AB0E-800">CHOOSE US</span>
-        </p>
-        <p className="text-xl mt-3">
-          Consulting with fitness professionals and healthcare providers
-          <br />
-          personalized guidance on your bodybuilding.
-        </p>
-        <EquipmentGrid />
-      </div>
+      <div className="flex flex-col items-center justify-center text-center overflow-hidden"> 
+  <p className="text-4xl" style={{ fontFamily: "Norwester", letterSpacing: "1px" }}> 
+    WHY YOU <span className="text-70AB0E-800">CHOOSE US</span> 
+  </p> 
+  <p className="text-xl mt-3"> 
+    Consulting with fitness professionals and healthcare providers <br /> 
+    personalized guidance on your bodybuilding. 
+  </p> 
+  <EquipmentGrid /> 
+</div>
 
       {/* card 4 */}
       <div className="max-w-sm w-full lg:max-w-full lg:flex justify-center">
