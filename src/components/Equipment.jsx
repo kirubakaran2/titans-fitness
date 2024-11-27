@@ -33,9 +33,8 @@ const equipmentList = [
   { title: "Assisted_Dip_Chin", description: "Machine which providing assistance for performing dips and chin-ups." },
   { title: "Dumbbells(2.5 kg to 35 kg)", description: "Free weights available in various increments for strength training." },
 ];
-
 const Equipment = ({ title, description }) => (
-  <div className="w-full md:w-1/2 lg:w-1/4 p-2 flex flex-col">
+  <div className="flex flex-col items-start p-2">
     <div className="flex items-center mb-2">
       <div className="bg-70AB0E-800 p-2 rounded-full mr-3 border-2 border-black">
         <FontAwesomeIcon
@@ -44,26 +43,28 @@ const Equipment = ({ title, description }) => (
           style={{ transform: "rotate(45deg)" }}
         />
       </div>
-      <div className="text-black text-xl font-norwester flex-shrink">
+      <div className="text-black text-xl font-norwester">
         {title}
       </div>
     </div>
-    <p className="text-black text-lg text-justify flex w-64 h-24">
+    <p className="text-black text-lg text-justify flex-grow">
       {description}
     </p>
   </div>
 );
 
 const EquipmentGrid = () => (
-  <div className="container mx-auto px-4 py-8">
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-      {equipmentList.map((item, index) => (
-        <Equipment
-          key={index}
-          title={item.title}
-          description={item.description}
-        />
-      ))}
+  <div className="flex justify-center items-center w-full px-2 sm:px-4">
+    <div className="w-full max-w-[1100px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {equipmentList.map((item, index) => (
+          <Equipment
+            key={index}
+            title={item.title}
+            description={item.description}
+          />
+        ))}
+      </div>
     </div>
   </div>
 );
